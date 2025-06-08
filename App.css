@@ -1,0 +1,25 @@
+body {
+        background-color: #f8f9fa;
+      }
+      .navbar {
+        background-color: #1a1a2e;
+      }
+      .navbar-brand,
+      .nav-link {
+        color: #fff !important;
+      }
+      .hero {
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #3a0ca3, #7209b7);
+        color: white;
+        text-align: center;
+      }
+      .card {
+        border-radius: 16px;
+      }
+      footer {
+        background-color: #1a1a2e;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
