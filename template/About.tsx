@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import Footer from './Footer';
 
 const About = () => {
   return (
@@ -110,7 +109,6 @@ const About = () => {
           </Col>
         </Row>
       </Container>
-      <Footer />
     </React.Fragment>
   );
 };

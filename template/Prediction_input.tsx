@@ -40,7 +40,8 @@ const Prediction_input = () => {
       .catch(err => console.error('Error fetching trending coins:', err));
   }, []);
 
-  const handleChange = useCallback(({ target: { name, value } }: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   }, []);
 
@@ -124,7 +125,7 @@ const Prediction_input = () => {
                     step="any"
                     name={f}
                     value={formData[f]}
-                    onChange={()=>handleChange}
+                    onChange={handleChange}
                     required
                   />
                 </Form.Group>
@@ -139,7 +140,7 @@ const Prediction_input = () => {
                   type="date"
                   name="date"
                   value={formData.date}
-                  onChange={()=>handleChange}
+                  onChange={handleChange}
                   required
                 />
               </Form.Group>
