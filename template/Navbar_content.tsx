@@ -7,7 +7,7 @@ const Navbar_content = () => {
         <React.Fragment>
             <Navbar expand="lg" className="bg-body-tertiary" bg="primary" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="">Crypto-Currency Predictor</Navbar.Brand>
+                    <Navbar.Brand href="/">Crypto-Currency Predictor</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
