@@ -79,7 +79,7 @@ const PredictionInput = () => {
     );
 
     try {
-      const { data } = await axios.post(`https://sd-95.github.io/crypto_frontend/predict`, payload);
+      const { data } = await axios.post(`https://your-backend-service.onrender.com/predict`, payload);
       setResult(data);
     } catch (err: any) {
       let errorMessage = 'An unexpected error occurred.';
