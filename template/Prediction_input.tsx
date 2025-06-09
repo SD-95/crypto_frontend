@@ -158,17 +158,42 @@ const Prediction_input = () => {
           <div className="mt-5">
             <Card className="shadow-lg border-0">
               <Card.Body>
-                <h4 className="mb-3 text-center">📊 Prediction Summary</h4>
+                <h4 className="mb-3 text-center">📝 Your Input Data</h4>
+
+                {/* Display user inputs in a Bootstrap table */}
+                <table className="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th>Coin</th>
+                      <td>{formData.coin} ({formData.symbol})</td>
+                    </tr>
+                    {fields.map(f => (
+                      <tr key={f}>
+                        <th>{f.replace(/_/g, ' ').toUpperCase()}</th>
+                        <td>{formData[f]}</td>
+                      </tr>
+                    ))}
+                    <tr>
+                      <th>Date</th>
+                      <td>{formData.date}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h4 className="mb-4 text-center">📊 Prediction Summary</h4>
                 <Row className="text-center">
                   {summary.map(([label, value, className, style], i) => (
                     <Col md={4} key={i} className="mb-3">
                       <div className="border rounded p-3 bg-light">
                         <h6>{label}</h6>
-                        <p className={className as string} style={style as React.CSSProperties}>{value}</p>
+                        <p className={className as string} style={style as React.CSSProperties}>
+                          {value}
+                        </p>
                       </div>
                     </Col>
                   ))}
                 </Row>
+
                 {recBox}
               </Card.Body>
             </Card>
