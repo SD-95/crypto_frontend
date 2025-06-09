@@ -35,20 +35,20 @@ const PredictionInput = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    axios.get('https://api.coingecko.com/api/v3/search/trending')
-      .then(res => {
-        const trending = res.data.coins.map((c: any) => ({
-          id: c.item.id,
-          name: c.item.name,
-          symbol: c.item.symbol.toUpperCase()
-        }));
-        setCoins(trending);
-      })
-      .catch(() => {
-        setError('Failed to fetch trending coins. Please check your internet connection.');
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('https://api.coingecko.com/api/v3/search/trending')
+  //     .then(res => {
+  //       const trending = res.data.coins.map((c: any) => ({
+  //         id: c.item.id,
+  //         name: c.item.name,
+  //         symbol: c.item.symbol.toUpperCase()
+  //       }));
+  //       setCoins(trending);
+  //     })
+  //     .catch(() => {
+  //       setError('Failed to fetch trending coins. Please check your internet connection.');
+  //     });
+  // }, []);
 
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -135,7 +135,7 @@ const PredictionInput = () => {
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handlePredict}>
           <Row className="g-3">
-            <Col md={4}>
+            {/* <Col md={4}>
               <Form.Group controlId="coin">
                 <Form.Label>Cryptocurrency Coin</Form.Label>
                 <Form.Select name="coin" value={coins.find(c => c.name === formData.coin)?.id || ''} onChange={handleCoinSelect} required>
@@ -154,7 +154,7 @@ const PredictionInput = () => {
                 <Form.Label>Cryptocurrency Symbol</Form.Label>
                 <Form.Control type="text" name="symbol" value={formData.symbol} readOnly />
               </Form.Group>
-            </Col>
+            </Col> */}
 
             {fields.map(f => (
               <Col md={4} key={f}>
